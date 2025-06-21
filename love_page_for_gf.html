@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Love</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: #1a1a2e;
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flower {
+      position: absolute;
+      top: -50px;
+      animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {transform: translateY(-50px) rotate(0deg);}
+      100% {transform: translateY(110vh) rotate(360deg);}
+    }
+
+    .message {
+      max-width: 600px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.3);
+    }
+
+    h1.glow {
+      color: #ff69b4;
+      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4, 0 0 30px #ff69b4;
+      font-size: 3em;
+    }
+
+    audio {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="glow">My Choti Bachii 💗</h1>
+  <div class="message">
+  <p>
+  Bebe 💗<br>
+  I made this little space just for you. I wanted to give you something that carries a piece of my heart. You’ve brought a light into my life that I didn’t know I needed, and every moment with you feels like magic. I still remember how we grew from shy little moments to holding each other like we always belonged. Your laughter, your anger, your care — everything about you makes me feel alive. I promise to hold your hand through every storm, to wipe every tear, and to smile at every sunrise together. Forever isn’t enough with you. I love you more than words, more than music, more than anything I’ve ever known.
+</p>
+<p>
+  And on April 6, 2025 — our proposal day — my heart found its forever. That day will always be the moment I knew: it’s you, only you. You’re not just my girlfriend — you’re my peace, my person, my everything. In this lifetime and every one after, it’s always you. No matter what comes, I’ll always choose you, protect you, and love you with all that I am.
+</p>
+<p>
+  Always yours, forever mine. 💍💗
+</p>
+  </div>
+
+  <!-- Falling flowers -->
+  <script>
+    function createFlower() {
+      const flower = document.createElement("div");
+      flower.classList.add("flower");
+      flower.innerHTML = "🌸";
+      flower.style.left = Math.random() * 100 + "vw";
+      flower.style.fontSize = Math.random() * 24 + 12 + "px";
+      flower.style.animationDuration = 5 + Math.random() * 5 + "s";
+      document.body.appendChild(flower);
+      setTimeout(() => flower.remove(), 10000);
+    }
+    setInterval(createFlower, 300);
+  </script>
+
+  <!-- Background Music -->
+  <audio controls autoplay loop>
+  <source src="music.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+</body>
+</html>
